@@ -39,7 +39,7 @@ public class UserRegisteration {
         return mob.matches(patt);
     }
     public static boolean checkValidPassword(String pass){
-        String patt = "^(?=.*[A-Z]).{8,}$";
+        String patt = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
         return pass.matches(patt);
     }
 }
