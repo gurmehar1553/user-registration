@@ -17,6 +17,9 @@ public class UserRegisteration {
         System.out.println("Enter Mobile Number");
         String mob = sc.next();
         System.out.println(checkValidMobile(mob));
+        System.out.println("Enter Password");
+        String pass = sc.next();
+        System.out.println(checkValidPassword(pass));
     }
 
     public static boolean checkValidFname(String fname) {
@@ -37,6 +40,6 @@ public class UserRegisteration {
     }
     public static boolean checkValidPassword(String pass){
         String patt = "^.{8,}$";
-        return true;
+        return pass.matches(patt);
     }
 }
