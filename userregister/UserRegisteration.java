@@ -14,6 +14,9 @@ public class UserRegisteration {
         System.out.println("Enter Email :");
         String email = sc.next();
         System.out.println(checkValidEmail(email));
+        System.out.println("Enter Mobile Number");
+        String mob = sc.next();
+        System.out.println(checkValidMobile(mob));
     }
 
     public static boolean checkValidFname(String fname) {
@@ -27,5 +30,9 @@ public class UserRegisteration {
     public static boolean checkValidEmail(String email){
         String patt = "^[a-zA-Z_-]+[a-zA-Z0-9_-]*@[a-z]+.[a-z0-9]{2,}$";
         return email.matches(patt);
+    }
+    public static boolean checkValidMobile(String mob){
+        String patt = "^[0-9]{1,3} [0-9]{10}$";
+        return mob.matches(patt);
     }
 }
