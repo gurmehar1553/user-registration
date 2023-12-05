@@ -10,7 +10,7 @@ public class UserRegisteration {
         System.out.println(checkValidFname(fname));
     }
 
-    private static boolean checkValidFname(String fname) {
+    public static boolean checkValidFname(String fname) {
         String patt = "^(Cap)([a-z]|[A-Z]){3,}";
         return fname.matches(patt);
     }
