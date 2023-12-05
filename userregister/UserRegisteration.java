@@ -35,4 +35,8 @@ public class UserRegisteration {
         String patt = "^[0-9]{1,3} [0-9]{10}$";
         return mob.matches(patt);
     }
+    public static boolean checkValidPassword(String pass){
+        String patt = "^.{8,}$";
+        return true;
+    }
 }
