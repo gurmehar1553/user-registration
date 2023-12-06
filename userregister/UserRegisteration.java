@@ -13,7 +13,6 @@ public class UserRegisteration {
         System.out.println(checkValidLname(lname));
         System.out.println("Enter Email :");
         String email = sc.next();
-        System.out.println(checkValidEmail(email));
         System.out.println("Enter Mobile Number");
         String mob = sc.next();
         System.out.println(checkValidMobile(mob));

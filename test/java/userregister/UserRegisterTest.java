@@ -25,7 +25,7 @@ public class UserRegisterTest {
             UserRegisteration.checkValidPassword("sjAjd2@@");
         }
         catch (UserRegistrationException e){
-
         }
     }
+
 }
