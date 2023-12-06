@@ -3,7 +3,7 @@ package userregister;
 import java.util.Scanner;
 
 public class UserRegisteration {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserRegistrationException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter First Name:");
         String fname = sc.next();
@@ -22,24 +22,49 @@ public class UserRegisteration {
         System.out.println(checkValidPassword(pass));
     }
 
-    public static boolean checkValidFname(String fname) {
-        String patt = "^(Cap)([a-z]|[A-Z]){3,}";
-        return fname.matches(patt);
+    public static boolean checkValidFname(String fname) throws UserRegistrationException {
+            String patt = "^(Cap)([a-z]|[A-Z]){3,}";
+            boolean ans = fname.matches(patt);
+            if(!ans){
+                throw new UserRegistrationException("Enter valid first name");
+            }
+            return ans;
     }
-    public static boolean checkValidLname(String lname){
-        String patt = "^(Cap)([a-z]|[A-Z]){3,}";
-        return lname.matches(patt);
+    public static boolean checkValidLname(String lname) throws UserRegistrationException {
+            String patt = "^(Cap)([a-z]|[A-Z]){3,}";
+            boolean ans = lname.matches(patt);
+            if(!ans){
+                throw new UserRegistrationException("Enter valid last name");
+            }
+            return ans;
     }
-    public static boolean checkValidEmail(String email){
+    public static boolean checkValidEmail(String email) throws UserRegistrationException{
         String patt = "^[a-zA-Z_-]+[a-zA-Z0-9_-]*@[a-z]+.[a-z0-9]{2,}$";
-        return email.matches(patt);
+        boolean ans = email.matches(patt);
+        if(!ans){
+            throw new UserRegistrationException("Enter valid email");
+        }
+        return ans;
     }
-    public static boolean checkValidMobile(String mob){
+    public static boolean checkValidMobile(String mob) throws UserRegistrationException {
         String patt = "^[0-9]{1,3} [0-9]{10}$";
-        return mob.matches(patt);
+        boolean ans = mob.matches(patt);
+        if(!ans){
+            throw new UserRegistrationException("Enter valid mobile number");
+        }
+        return ans;
     }
-    public static boolean checkValidPassword(String pass){
+    public static boolean checkValidPassword(String pass) throws UserRegistrationException {
         String patt = "^(?=.*[A-Z])(?=.*[0-9])[@#$%!^&*].{8,}$";
-        return pass.matches(patt);
+        boolean ans = pass.matches(patt);
+        if(!ans){
+            throw new UserRegistrationException("Enter valid password");
+        }
+        return ans;
+    }
+}
+class UserRegistrationException extends Exception{
+    UserRegistrationException(String msg){
+        super(msg);
     }
 }
