@@ -22,7 +22,7 @@ public class UserRegisteration {
     }
 
     public static boolean checkValidFname(String fname) throws UserRegistrationException {
-            String patt = "^(Cap)([a-z]|[A-Z]){3,}";
+            String patt = "^[A-Z]([a-zA-Z]){2,}";
             boolean ans = fname.matches(patt);
             if(!ans){
                 throw new UserRegistrationException("Enter valid first name");
@@ -30,7 +30,7 @@ public class UserRegisteration {
             return ans;
     }
     public static boolean checkValidLname(String lname) throws UserRegistrationException {
-            String patt = "^(Cap)([a-z]|[A-Z]){3,}";
+            String patt = "^[A-Z]([a-zA-Z]){2,}";
             boolean ans = lname.matches(patt);
             if(!ans){
                 throw new UserRegistrationException("Enter valid last name");
