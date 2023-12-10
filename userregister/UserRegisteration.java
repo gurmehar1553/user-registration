@@ -54,7 +54,7 @@ public class UserRegisteration {
         return ans;
     }
     public static boolean checkValidPassword(String pass) throws UserRegistrationException {
-        String patt = "^(?=.*[A-Z])(?=.*[0-9])[@#$%!^&*].{8,}$";
+        String patt = "^(?=.*[A-Z])(?=.*[0-9])(?=.*^[a-zA-Z\\d]).{8,}$";
         boolean ans = pass.matches(patt);
         if(!ans){
             throw new UserRegistrationException("Enter valid password");
